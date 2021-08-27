@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+/* Color variables */
+$clr-primary: hsl(225, 100%, 50%);
+$clr-primary-hover: hsl(160, 80%, 50%);
+$clr-primary-dark: hsl(160, 95%, 30%);
+$clr-gray300: hsl(220, 30%, 90%);
+$clr-gray500: hsl(230, 15%, 35%);
+
+/* Border Radius */
+$radius: 0.2rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Noto Sans", sans-serif;
+  color: $clr-gray500;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem;
+}
+.card {
+  display: flex;
+  border-radius: $radius;
+  min-width: 28rem;
+  box-shadow: 0 0 10px 5px $clr-gray300;
+  &-image {
+    width: 14rem;
+    height: 11rem;
+    object-fit: cover;
+  }
+  &-body {
+    margin: 1rem;
+    flex-grow: 1;
+  }
+  &-title {
+    margin-bottom: 0.5rem;
+    line-height: 1.8rem;
+  }
+  &-description {
+    line-height: 1.2rem;
+  }
+  &-price {
+    margin-top: 0.6rem;
+    font-size: 1.4rem;
+    &::before {
+      content: "$";
+      position: relative;
+      top: -0.3rem;
+      padding-right: 0.1rem;
+      font-size: 1rem;
+    }
+  }
+  &-btn {
+    width: 100%;
+    border: none;
+    border-top: 1px solid $clr-gray500;
+    color: inherit;
+    background-color: transparent;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      color: $clr-primary;
+    }
+  }
+}
